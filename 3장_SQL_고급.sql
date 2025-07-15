@@ -65,3 +65,69 @@ INSERT INTO SALE (EMPNO, YEAR, MONTH, PRICE) VALUES (1003, 2024, 2, 101000);
 INSERT INTO SALE (EMPNO, YEAR, MONTH, PRICE) VALUES (1004, 2024, 2, 43000);
 INSERT INTO SALE (EMPNO, YEAR, MONTH, PRICE) VALUES (1005, 2024, 2, 24000);
 INSERT INTO SALE (EMPNO, YEAR, MONTH, PRICE) VALUES (1006, 2024, 2, 109000);
+
+-- 실습하기 2-1
+select * from emp where name = '김유신';
+select * from emp where job = '차장' and depno = 101;
+select * from emp where job = '차장' or depno = 101;
+select * from emp where name != '김춘추';
+select * from emp where name <> '김춘추';
+select * from emp where job = '사원' and depno = 10;
+select * from emp where job = '사원' or job = '대리';
+select * from emp where job in ('사원', '대리');
+select * from emp where depno in (101, 102, 103);
+select * from emp where name like '김%';
+select * from emp where name like '%신';
+select * from emp where name like '김__';
+select * from emp where name like '이_';
+select * from emp where name like '이__';
+select * from emp where name like '_순%';
+//select * from emp where hp like '010-1111%';
+select * from emp where depno is null;
+select * from emp where depno is not null;
+select * from emp where empno >= 1005;
+select * from dept where deptno = 10;
+select * from dept where dname = '영업지원부';
+select * from dept where dtel like '%30%';
+select * from dept where deptno in (10, 30);
+select * from dept where dname like '영업__';
+select * from sale where price > 50000;
+select * from sale where price >= 50000 and price < 100000 and month = 1;
+select * from sale where price between 50000 and 100000;
+select * from sale where year = 2024;
+select * from sale where year = 2024 and month = 2;
+select * from sale where month in (1, 2);
+
+-- 실습하기 2-2
+select * from sale order by price;
+select * from sale order by price asc;
+select * from sale order by price desc;
+select * from emp order by name desc;
+select * from emp order by regdate asc;
+
+select * from sale where price > 50000 order by price desc;
+select * from sale
+    where price > 50000
+    order by year desc, month, price desc;
+    
+select * from sale fetch first 3 row only;
+select * from sale offset 0 rows fetch next 3 rows only;
+select * from sale offset 1 rows fetch next 2 rows only;
+select * from sale offset 5 rows fetch next 3 rows only;
+select * from sale order by price desc offset 3 rows fetch next 5 rows only;
+select * from sale
+    where price < 50000
+    order by price desc
+    fetch first 3 rows only;
+
+select * from sale
+    where price > 50000
+    order by year desc, month, price desc
+    fetch first 5 rows only;
+    
+-- 실습하기 2-3
+select distinct depno from emp;
+select distinct job, depno from emp;
+
+select empno as 사번, name as 이름, gender as 성별 from emp;
+select empno E, name N, gender G from emp;
