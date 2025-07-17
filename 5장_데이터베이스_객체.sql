@@ -56,4 +56,16 @@ insert into user6 values (seq_user6.nextval, '김유신', 'M', 25, '김해시');
 insert into user6 values (seq_user6.nextval, '김춘추', 'M', 23, '경주시');
 insert into user6 values (seq_user6.nextval, '신사임당', 'F', 27, '강릉시');
 
-select * from user6;
+-- 실습하기 4-1
+// Oracle에서 내부 스크립트 실행이나 일반 사용자 생성을 가능하게 하기 위한 세션 설정
+alter session set "_ORACLE_SCRIPT"=true;
+create user test1 identified by 1234;
+
+-- 실습하기 4-2
+select * from all_users;
+
+-- 실습하기 4-3
+alter user test1 identified by 1111;
+
+-- 실습하기 4-4
+grant connect, resource unlimited tablespace to test1;

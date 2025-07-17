@@ -1,0 +1,338 @@
+/*
+    날짜 : 2025.07.17.
+    이름 : 강민철
+    내용 : 6장 PL/SQL
+*/
+
+-- 실습 1-1
+set serveroutput on;
+
+begin
+    dbms_output.put_line('Hello, Oracle!');
+end;
+
+-- 실습 1-2
+declare
+    no      number(4) := 1001;
+    name    varchar2(10) := '홍길동';
+    hp      char(13) := '010-1000-1001';
+    addr    varchar2(100) := '부산광역시';
+begin
+    dbms_output.put_line('번호 : ' || no);
+    dbms_output.put_line('이름 : ' || name);
+    dbms_output.put_line('전화 : ' || hp);
+    dbms_output.put_line('주소 : ' || addr);
+end;
+/
+
+-- 실습 2-1
+DECLARE
+    NO      CONSTANT NUMBER(4) := 1001;
+    NAME    VARCHAR2(10);
+    HP      CHAR(13) := '000-0000-0000';
+    AGE     NUMBER(2) DEFAULT 1;
+    ADDR    VARCHAR2(10) NOT NULL := '부산';
+BEGIN
+    NAME := '김유신';
+    HP := '010-1000-1001';
+    DBMS_OUTPUT.PUT_LINE('번호 : ' || NO);
+    DBMS_OUTPUT.PUT_LINE('이름 : ' || NAME);
+    DBMS_OUTPUT.PUT_LINE('전화 : ' || HP);
+    DBMS_OUTPUT.PUT_LINE('나이 : ' || AGE);
+    DBMS_OUTPUT.PUT_LINE('주소 : ' || ADDR);
+END;
+/
+
+-- 실습 2-2 열 참조형 변수 실습
+declare
+    no      dept.deptno%type;
+    name    dept.dname%type;
+    dtel    dept.dtel%type;
+begin
+    select *
+    into no, name, dtel
+    from dept
+    where deptno = 30;
+    
+    dbms_output.put_line('부서번호 : ' || no);
+    dbms_output.put_line('부서명 : ' || name);
+    dbms_output.put_line('전화번호 : ' || dtel);
+end;
+/
+
+-- 실습 2-3
+declare
+    row_dept dept%rowtype;
+begin
+    select *
+    into row_dept
+    from dept
+    where deptno = 40;
+    
+    dbms_output.put_line('부서번호 : ' || row_dept.deptno);
+    dbms_output.put_line('부서명 : ' || row_dept.dname);
+    dbms_output.put_line('전화번호 : ' || row_dept.dtel);
+end;
+/
+
+-- 실습 2-4
+declare
+    type rec_dept is record (
+        deptno  number(2),
+        dname   dept.dname%type,
+        dtel    dept.dtel%type
+    );
+    dept_rec rec_dept;
+begin
+    dept_rec.deptno := 10;
+    dept_rec.dname := '개발부';
+    dept_rec.dtel := '051-512-1010';
+    
+    dbms_output.put_line('deptno : ' || dept_rec.deptno);
+    dbms_output.put_line('dname : ' || dept_rec.dname);
+    dbms_output.put_line('dtel : ' || dept_rec.dtel);
+    dbms_output.put_line('PL/SQL 종료...');
+end;
+/
+
+-- 실습하기 2-7
+declare
+    type arr_city is table of varchar2(20) index by pls_integer;
+    arrCity arr_city;
+begin
+    arrCity(1) := '서울';
+    arrCity(2) := '대전';
+    arrCity(3) := '대구';
+    
+    dbms_output.put_line('arrCity(1) : ' || arrCity(1));
+    dbms_output.put_line('arrCity(2) : ' || arrCity(2));
+    dbms_output.put_line('arrCity(3) : ' || arrCity(3));
+    dbms_output.put_line('PL/SQL 종료...');
+end;
+/
+
+-- 실습 3-1
+declare
+    num number := 1;
+begin
+    if num > 0 then
+        dbms_output.put_line('num은 0보다 크다.');
+    end if;
+    dbms_output.put_line('PL/SQL 종료...');
+end;
+/
+
+-- 실습 3-2
+declare
+    num number := -1;
+begin
+    if num > 0 then
+        dbms_output.put_line('num은 0보다 크다.');
+    else
+        dbms_output.put_line('num은 0보다 작다.');
+    end if;
+    dbms_output.put_line('PL/SQL 종료...');
+end;
+/
+
+-- 실습 3-3
+declare
+    score number := 86;
+begin
+    if score >= 90 and score <= 100 then
+        dbms_output.put_line('A 입니다.');
+    elsif score >= 80 and score < 90 then
+        dbms_output.put_line('B 입니다.');
+    elsif score >= 70 and score < 80 then
+        dbms_output.put_line('C 입니다.');
+    elsif score >= 60 and score < 70 then
+        dbms_output.put_line('D 입니다.');
+    else
+        dbms_output.put_line('F 입니다.');
+    end if;
+    dbms_output.put_line('PL/SQL 종료...');
+end;
+/
+
+-- 실습 3-4
+declare
+    score number := 86;
+begin
+    case floor(score/10)
+        when 9 then dbms_output.put_line('A 입니다.');
+        when 8 then dbms_output.put_line('B 입니다.');
+        when 7 then dbms_output.put_line('C 입니다.');
+        when 6 then dbms_output.put_line('D 입니다.');
+        else dbms_output.put_line('F 입니다.');
+    end case;
+    dbms_output.put_line('PL/SQL 종료...');
+end;
+/
+
+-- 실습 3-5
+declare
+    num number := 0;
+begin
+    loop
+        dbms_output.put_line('num : ' || num);
+        num := num + 1;
+        
+        if num > 3 then
+            exit;
+        end if;
+    end loop;
+    dbms_output.put_line('PL/SQL 종료...');
+end;
+/
+
+-- 실습 3-6
+begin
+    for i in 1..3 loop
+        dbms_output.put_line('i : ' || i);
+    end loop;
+    dbms_output.put_line('PL/SQL 종료...');
+end;
+/
+
+-- 실습 3-7
+declare
+    num number := 0;
+begin
+    while num < 4 loop
+        dbms_output.put_line('num : ' || num);
+        num := num + 1;
+    end loop;
+    dbms_output.put_line('PL/SQL 종료...');
+end;
+/
+
+-- 실습 3-8
+declare
+    num number := 0;
+begin
+    while num < 5 loop
+        num := num + 1;
+        
+        -- mod() : 나머지를 구하는 sql함수
+        if mod(num,2) = 0 then
+            continue;
+        end if;
+        
+        dbms_output.put_line('num : ' || num);
+    end loop;
+    
+    dbms_output.put_line('PL/SQL 종료...');
+end;
+/
+
+-- 실습 3-9
+begin
+    for i in 1..5 loop
+        continue when mod(i, 2) = 0;
+        dbms_output.put_line('i : ' || i);
+    end loop;
+    dbms_output.put_line('PL/SQL 종료...');
+end;
+/
+
+-- 실습 4-1
+declare
+    v_dept_row dept%rowtype;
+    
+    -- 커서 선언
+    cursor c1 is select * from dept where deptno=40;
+begin
+
+    -- 커서 열기
+    open c1;
+    
+    -- 커서 데이터 입력
+    fetch c1 into v_dept_row;
+    
+    dbms_output.put_line('deptno : ' || v_dept_row.deptno);
+    dbms_output.put_line('dname : ' || v_dept_row.dname);
+    dbms_output.put_line('dtel : ' || v_dept_row.dtel);
+    
+    -- 커서 종료
+    close c1;
+end;
+/
+
+-- 실습 4-2
+declare
+    v_emp_row emp%rowtype;
+    cursor emp_cursor is select * from emp;
+begin
+    open emp_cursor;
+    loop
+        fetch emp_cursor into v_emp_row;
+        
+        exit when emp_cursor%notfound;
+        
+        dbms_output.put_line('-----------------------');
+        dbms_output.put_line('empno : ' || v_emp_row.empno);
+        dbms_output.put_line('name : ' || v_emp_row.name);
+        dbms_output.put_line('regdate : ' || v_emp_row.regdate);
+    end loop;
+    close emp_cursor;
+end;
+/
+
+-- 실습 4-3
+declare
+    cursor c1 is select * from dept;
+begin
+    for c1_rec in c1 loop
+    dbms_output.put_line('----------------------------');
+    dbms_output.put_line('deptno : ' || c1_rec.deptno);
+    dbms_output.put_line('dname : ' || c1_rec.dname);
+    dbms_output.put_line('dtel : ' || c1_rec.dtel);
+    end loop;
+end;
+/
+
+-- 실습 5-1
+create PROCEDURE hello_procedure (p_name in varchar2)
+is
+begin
+    dbms_output.put_line('안녕하세요, ' || p_name || '님!');
+    dbms_output.put_line('환영합니다.');
+end;
+/
+
+-- 프로시저 실행:
+execute hello_procedure('홍길동');
+execute hello_procedure('김철수');
+
+drop PROCEDURE hello_procedure;
+
+-- 실습 5-2
+create function get_emp_name (p_empno number) return varchar2
+is
+    v_ename varchar2(20);
+begin
+    select name into v_ename from emp where empno=p_empno;
+    return v_ename;
+end;
+/
+
+select get_emp_name(1001) from dual;
+
+-- 실습 5-3
+create table emp_log (
+    log_date date,
+    empno number,
+    action varchar(10)
+);
+
+-- 트리거 생성
+create trigger trgg_emp_insert
+after insert on emp
+for each row
+begin
+    insert into emp_log (log_date, empno, action)
+    values (sysdate, :new.empno, 'insert');
+end;
+/
+
+insert into emp values (2001, '김유신', 'M', '사원', 10, sysdate);
