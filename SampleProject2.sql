@@ -146,4 +146,98 @@ from emp
 where deptno = 10;
 
 -- 교제 p96
-select sysdate, next_day(sysdate,'MON') from dual;
+select sysdate, next_day(sysdate,'월') from dual;
+
+select sysdate, next_day('14/05/01', '월') from dual;
+
+-- 교제 p97
+select sysdate, last_day(sysdate), last_day('14/05/01')
+from dual;
+
+-- 교제 p98
+alter session set nls_date_format='YYYY-MM-DD HH24:MI:SS';
+
+select sysdate, round(sysdate), trunc(sysdate)
+from dual;
+
+-- 교제 p100
+select 2 + '2' from dual;
+
+select 2 + 'A' from dual;
+
+-- 교제 p103
+select sysdate, to_char(sysdate, 'YYYY') "YYYY",
+                to_char(sysdate, 'RRRR') "RRRR",
+                to_char(sysdate, 'YY') "YY",
+                to_char(sysdate, 'YEAR') "YEAR"
+from dual;
+
+select sysdate, to_char(sysdate, 'DD') "DD",
+                to_char(sysdate, 'DAY') "DAY",
+                to_char(sysdate, 'DDTH') "DDTH"
+from dual;
+
+select sysdate, to_char(sysdate, 'RRRR-MM-DD:HH24:MI:SS')
+from dual;
+
+-- 교제 p108
+select to_number('5') from dual;
+select to_number('A') from dual;
+select ascii('A') from dual;
+
+-- 교제 p110
+select to_date('14/05/31') from dual;
+select to_date('2014/05/31') from dual;
+
+-- 교제 p111
+select ename, comm, nvl(comm,0), nvl(comm,100)
+from emp
+where deptno = 30;
+
+-- 교제 p112
+select empno, ename, sal, comm,
+        nvl2(comm, sal+comm, sal*0) "nvl2"
+from emp
+where deptno = 30;
+
+-- 교제 p114
+select deptno, name, decode(deptno, 101, 'Computer Engineering') "DNAME"
+from professor;
+
+select deptno, name, decode(deptno, 101, 'Computer Engineering', 'ETC') "DNAME"
+from professor;
+
+select deptno, name, decode(deptno, 101, 'Computer Engineering',
+                                    102, 'Multimedia Engineering',
+                                    103, 'Software Engineering',
+                                         'ETC') "DNAME"
+from professor;
+
+select deptno, name, decode(deptno, 101, decode(name,'Audie Murphy','BEST!')) "DNAME"
+from professor;
+
+select deptno, name, decode(deptno, 101, decode(name,'Audie Murphy','BEST!','GOOD')) "DNAME"
+from professor;
+
+select deptno, name, decode(deptno, 101, decode(name,'Audie Murphy','BEST!','GOOD'),'N/A') "DNAME"
+from professor;
+
+-- 교제 p121
+select name, tel,
+        case(substr(tel,1,instr(tel,')')-1)) when '02' then 'SEOUL'
+                                             when '031' then 'GYEONGGI'
+                                             when '051' then 'BUSAN'
+                                             when '052' then 'ULSAN'
+                                             when '055' then 'GYEONGNAM'
+                                                        else 'ETC'
+        end "LOC"
+from student
+where deptno1 = 201;
+
+select name, substr(jumin,3,2) "MONTH",
+       case when substr(jumin,3,2) between '01' and '03' then '1/4'
+            when substr(jumin,3,2) between '04' and '06' then '2/4'
+            when substr(jumin,3,2) between '07' and '09' then '3/4'
+            when substr(jumin,3,2) between '10' and '12' then '4/4'
+       end "Quarter"
+from student;
