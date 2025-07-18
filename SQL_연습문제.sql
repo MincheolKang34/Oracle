@@ -122,7 +122,7 @@ select * from customer order by rdate desc;
 select * from orders where ord_cnt >=3 order by ord_cnt desc, ord_pno asc;
 
 -- 실습 1-21
-select round(avg(price),4) as "AVG(PRICE)" from product;
+select avg(price) from product;
 
 -- 실습 1-22
 select sum(stock) as "재고량 합계" from product where company='농심';
@@ -134,11 +134,11 @@ select count(cid) as 고객수 from customer;
 select count(distinct company) as "제조업체 수" from product;
 
 -- 실습 1-25
-select ord_pno as "주문 상품번호",sum(ord_cnt) as "총 주문량" from orders group by ord_pno order by ord_pno;
+select ord_pno as "주문 상품번호",sum(ord_cnt) as "총 주문량" from orders group by ord_pno order by ord_pno asc;
 
 -- 실습 1-26
 select company as 제조업체, count(*) as 제품수, max(price) as 최고가 from product
-group by company order by company;
+group by company order by company asc;
 
 -- 실습 1-27
 select company as 제조업체, count(*) as 제품수, max(price) as 최고가 from
@@ -157,4 +157,5 @@ where ord_cid = 'c102';
 select ord_cid, name, pname, ord_date from orders a
 join customer b on a.ord_cid = b.cid
 join product c on a.ord_pno = c.pno
-where ord_date like '%-07-03%';
+where substr(ord_date, 1, 10) = '2022-07-03';
+//where ord_date like '2022-07-03%';
