@@ -211,10 +211,10 @@ on a.acc_no=t.tr_acc;
 -- 실습 3-28
 select 
     a.acc_no,
-    c.C_NAME,
-    SUM(CASE WHEN t.TR_TYPE = 1 THEN t.TR_AMOUNT ELSE 0 END) AS 총입금액,
-    SUM(CASE WHEN t.TR_TYPE = 2 THEN t.TR_AMOUNT ELSE 0 END) AS 총출금액
-FROM TRANSACTION t
+    c.c_name,
+    sum(case when t.tr_type=1 then t.tr_amount else 0 end) as 총입금액,
+    sum(case when t.tr_type=2 then t.tr_amount else 0 end) as 총출금액
+from transaction t
 right join account a on t.tr_acc=a.acc_no
 join customer c on a.acc_cid=c.c_id
 where c.c_type=1
