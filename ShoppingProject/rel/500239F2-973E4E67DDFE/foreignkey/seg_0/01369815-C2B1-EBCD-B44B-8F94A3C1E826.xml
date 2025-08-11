@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="01369815-C2B1-EBCD-B44B-8F94A3C1E826" containerWithKeyObject="F1669D5D-994C-4CD3-F200-4D4D54D32C1A" localFKIndex="652BCF4E-EEB4-86DA-679E-E9709EC8BE2C" name="Cart_User_FK">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 06:47:37 UTC</createdTime>
+<ownerDesignName>ShoppingProject</ownerDesignName>
+<referredTableLongName>User</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D75717B5-8DB0-9F32-76DE-27F7A6800BF6</referredTableID>
+<keyObject>E3AF3D40-4BBA-7CB2-23C8-16419EE385D0</keyObject>
+<referredKeyID>E3AF3D40-4BBA-7CB2-23C8-16419EE385D0</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>userId</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
