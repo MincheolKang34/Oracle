@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E9163D68-3F19-597B-8312-4A65F32FB8A7" name="Register">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:14:32 UTC</createdTime>
+<ownerDesignName>CollegeERD</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="regStdNo" id="1BB68331-CF0C-49E1-5080-376E01D19CB2">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:16:16 UTC</createdTime>
+<ownerDesignName>CollegeERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>8 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="96C0F0D0-8B2A-C966-A0FB-10C37B396477" referredColumn="A57C8170-616C-408D-20C9-C7E258B00090"/>
+</associations>
+</Column>
+<Column name="regLecNo" id="EF9033FE-B1FA-F0DA-0F53-88408B29D878">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:16:27 UTC</createdTime>
+<ownerDesignName>CollegeERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E7594856-F973-4BA8-E038-BD3531BCF1C4" referredColumn="A5E700E2-A816-DABF-F129-5E6783E0CFB1"/>
+</associations>
+</Column>
+<Column name="regMidScore" id="D64AB7E7-0605-F2C3-6F58-56673E44DCB6">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:16:04 UTC</createdTime>
+<ownerDesignName>CollegeERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="regFinalScore" id="36801CAE-47C4-BA0C-D9BF-1BEEC359C16E">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:16:04 UTC</createdTime>
+<ownerDesignName>CollegeERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="regTotalScore" id="D0A61C46-4411-B582-2888-3D59C512A637">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:16:04 UTC</createdTime>
+<ownerDesignName>CollegeERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="regGrade" id="A7CB4B10-96B0-CF5A-740B-4546A020F423">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:16:04 UTC</createdTime>
+<ownerDesignName>CollegeERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CF46339A-8EA4-B1C3-44CD-5C91914F7B37" name="Register_Student_FK">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:16:16 UTC</createdTime>
+<ownerDesignName>CollegeERD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1BB68331-CF0C-49E1-5080-376E01D19CB2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A10A0B4A-5FE5-15C3-484B-08F7B99C4161" name="Register_Lecture_FK">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:16:27 UTC</createdTime>
+<ownerDesignName>CollegeERD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EF9033FE-B1FA-F0DA-0F53-88408B29D878"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
