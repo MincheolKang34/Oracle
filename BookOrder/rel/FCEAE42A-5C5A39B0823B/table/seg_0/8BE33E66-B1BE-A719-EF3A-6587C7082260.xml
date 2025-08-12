@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8BE33E66-B1BE-A719-EF3A-6587C7082260" name="BO_Customer">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-12 05:46:56 UTC</createdTime>
+<ownerDesignName>BookOrder</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="custId" id="AB91AC62-FB0C-0E36-E081-608C665745DF">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-12 05:47:50 UTC</createdTime>
+<ownerDesignName>BookOrder</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="C45A5E73-A665-6DAA-11DC-1FFF5200E2F2">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-12 05:47:50 UTC</createdTime>
+<ownerDesignName>BookOrder</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="address" id="FC381BEB-4585-6DF7-AC76-145C050060D5">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-12 05:47:50 UTC</createdTime>
+<ownerDesignName>BookOrder</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7A3425E5-557F-F3F2-F992-1DA69B59257F" name="Customer_PK">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-12 05:47:50 UTC</createdTime>
+<ownerDesignName>BookOrder</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AB91AC62-FB0C-0E36-E081-608C665745DF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

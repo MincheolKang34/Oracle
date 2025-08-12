@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="BookOrder" id="72D0218B-4E7B-209B-EA6F-3084DA929DF8" version="3.5">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-12 05:31:05 UTC</createdTime>
+<ownerDesignName>BookOrder</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>72D0218B-4E7B-209B-EA6F-3084DA929DF8</designId>
+</OSDM_Design>
