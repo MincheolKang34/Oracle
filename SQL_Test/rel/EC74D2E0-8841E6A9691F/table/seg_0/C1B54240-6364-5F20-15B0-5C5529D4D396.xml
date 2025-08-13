@@ -1,0 +1,132 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C1B54240-6364-5F20-15B0-5C5529D4D396" name="Card">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:07:15 UTC</createdTime>
+<ownerDesignName>SQL_Test</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="card_no" id="A7ACA4EC-3FAE-706F-A753-02E9CD8FAD58">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:09:00 UTC</createdTime>
+<ownerDesignName>SQL_Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>14</dataTypeSize>
+<ownDataTypeParameters>14,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cust_jumin" id="BCFEB1F0-7312-8EDA-0ABC-C638DE49620A">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:15:28 UTC</createdTime>
+<ownerDesignName>SQL_Test</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>14</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6C0BC8F5-37FB-7C31-082C-3154FE4D9738" referredColumn="BEECC3E1-83EC-A844-DC96-02F9AB5F45B0"/>
+</associations>
+</Column>
+<Column name="acc_id" id="17700BD1-73D3-5CD2-AA87-CFDB78E70626">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:15:34 UTC</createdTime>
+<ownerDesignName>SQL_Test</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>14</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="475EB311-E39E-42BB-230C-A354FAE21EB1" referredColumn="5DBD13BA-B72B-B93C-5B05-7C9F0742A713"/>
+</associations>
+</Column>
+<Column name="card_register_date" id="F7DEDD9F-762C-42EF-CCAE-36A68AA2F84E">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:09:00 UTC</createdTime>
+<ownerDesignName>SQL_Test</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="card_limit" id="58AAE0E2-67B5-A6F8-F196-9445BAB5D9CB">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:09:00 UTC</createdTime>
+<ownerDesignName>SQL_Test</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="card_approve_date" id="4480C41D-5A1D-A677-8D72-5ECB662AA3F7">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:09:00 UTC</createdTime>
+<ownerDesignName>SQL_Test</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="card_type" id="A5E6C221-2A15-C615-284C-640DBDE15888">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:09:00 UTC</createdTime>
+<ownerDesignName>SQL_Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="ED37C37A-6AD9-7E71-9CD3-8CCF479506CB" name="Card_PK">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:09:00 UTC</createdTime>
+<ownerDesignName>SQL_Test</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A7ACA4EC-3FAE-706F-A753-02E9CD8FAD58"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B6AE5E14-9DF1-925B-EC33-3A0A9980E0C3" name="Card_Customer_FK">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:15:28 UTC</createdTime>
+<ownerDesignName>SQL_Test</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BCFEB1F0-7312-8EDA-0ABC-C638DE49620A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4F8AA0F2-4771-F82B-AB50-761228E880FC" name="Card_Account_FK">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:15:34 UTC</createdTime>
+<ownerDesignName>SQL_Test</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="17700BD1-73D3-5CD2-AA87-CFDB78E70626"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

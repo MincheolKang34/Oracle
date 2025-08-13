@@ -1,0 +1,105 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C7DC8810-0E39-FBE7-5444-2837573697A6" name="Account">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:11:30 UTC</createdTime>
+<ownerDesignName>SQL_Test</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="acc_id" id="5DBD13BA-B72B-B93C-5B05-7C9F0742A713">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:12:06 UTC</createdTime>
+<ownerDesignName>SQL_Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>14</dataTypeSize>
+<ownDataTypeParameters>14,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cust_jumin" id="FF906488-9458-485F-89AE-4CD688FF8DAB">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:15:48 UTC</createdTime>
+<ownerDesignName>SQL_Test</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>14</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CBEBDB3C-AD6C-2E2A-299A-C721A899F721" referredColumn="BEECC3E1-83EC-A844-DC96-02F9AB5F45B0"/>
+</associations>
+</Column>
+<Column name="acc_type" id="7425C39C-6BE5-514C-8E2A-B9D5256B3525">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:12:06 UTC</createdTime>
+<ownerDesignName>SQL_Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="acc_balance" id="310CC181-9ADF-D657-A5F6-482128E27B84">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:12:06 UTC</createdTime>
+<ownerDesignName>SQL_Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="acc_card" id="C1B4285F-3117-54F8-A26C-EDA08F554D96">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:12:06 UTC</createdTime>
+<ownerDesignName>SQL_Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="acc_register_date" id="6E9147A6-C71B-C8FA-44A6-2E60AF294EA3">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:12:06 UTC</createdTime>
+<ownerDesignName>SQL_Test</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AA73DE14-3FB2-8293-3264-346C915659E4" name="Account_PK">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:13:16 UTC</createdTime>
+<ownerDesignName>SQL_Test</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5DBD13BA-B72B-B93C-5B05-7C9F0742A713"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C83F8072-6021-BF88-39D8-E50C88905FEA" name="Account_Customer_FK">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:15:48 UTC</createdTime>
+<ownerDesignName>SQL_Test</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FF906488-9458-485F-89AE-4CD688FF8DAB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
